@@ -1,0 +1,118 @@
+  <header class="header header--default header--home-4 white" data-sticky="true">
+      <div class="header__left">
+        <ul class="ps-list--social">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+      <div class="header__center">
+        <nav class="header__navigation left">
+          <ul class="menu">
+            <li class="current-menu-item menu-item-has-children"><a [routerLink]="['/']" routerLinkActive="router-link-active" >Inicio</a>
+              
+           
+            </li>
+
+            <li class="menu-item-has-children"><a >Casas</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
+              <ul class="sub-menu">
+                <li><a [routerLink]="['/gryffindor']" routerLinkActive="router-link-active" > Gryffindor</a>
+                </li>
+                <li><a [routerLink]="['/hufflepuff']" routerLinkActive="router-link-active">Hufflepuff</a>
+                </li>
+                <li><a [routerLink]="['/ravenclaw']" routerLinkActive="router-link-active">Ravenclaw</a>
+                </li>
+                
+                <li><a [routerLink]="['/slytherin']" routerLinkActive="router-link-active">Slytherin</a>
+                </li>
+                
+         
+              </ul>
+            </li>
+            <li><a [routerLink]="['/teachers']" routerLinkActive="router-link-active" >Profesores</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__logo"><a class="ps-logo" href="index-2.html"><img src="./assets/img/escudo.png" alt=""></a></div>
+        <nav class="header__navigation right">
+          <ul class="menu">
+            <li class="current-menu-item menu-item-has-children"><a [routerLink]="['/students']" routerLinkActive="router-link-active">Estudiantes</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
+            
+            </li>
+         
+            <li><a [routerLink]="['/register']" routerLinkActive="router-link-active"  >Unete</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+     <div class="header__right">
+        <div class="header__actions"><a class="ps-search-btn" href="#"><i class="fa fa-search"></i></a><a href="#"><i class="fa fa-heart-o"></i></a>
+          <div class="ps-cart--mini"><a class="ps-cart__toggle" href="#"></a>
+            
+           
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobil navegacion -->
+    <header class="header header--mobile" data-sticky="false">
+      <div class="header__content">
+        <div class="header__left"><a class="ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a></div>
+        <div class="header__center"><a class="ps-logo" href="#"><img src="./assets/img/logo.png" alt=""></a></div>
+        <div class="header__right">
+          <div class="header__actions"><a href="#"><i class="fa fa-heart-o"></i></a></div>
+        </div>
+      </div>
+    </header>
+    <div class="ps-panel--sidebar" id="cart-mobile">
+    
+    <!-- Navegacion carrito  -->
+      <div class="navigation__content">
+        
+      </div>
+
+      
+
+    </div>
+    <div class="ps-panel--sidebar" id="navigation-mobile">
+      <div class="ps-panel__header">
+        <h3>Menu</h3>
+      </div>
+      <div class="ps-panel__content">
+        <ul class="menu--mobile">
+          <li class="current-menu-item menu-item-has-children"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >Inicio</a>
+         
+          </li>
+          <li class="menu-item-has-children"><a href="shop-default.html">Casas</a><span class="sub-toggle"></span>
+            <ul class="sub-menu">
+                <li><a [routerLink]="['/gryffindor']" routerLinkActive="router-link-active" > Gryffindor</a>
+                </li>
+                <li><a [routerLink]="['/hufflepuf']" routerLinkActive="router-link-active">Hufflepuf</a>
+                </li>
+                <li><a [routerLink]="['/ravenclaw']" routerLinkActive="router-link-active">Ravenclaw</a>
+                </li>
+                
+                <li><a [routerLink]="['/slytherin']" routerLinkActive="router-link-active">Slytherin</a>
+                </li>
+                
+         
+              </ul>
+          </li>
+          <li><a [routerLink]="['/teachers']" routerLinkActive="router-link-active" >Profesores</a>
+          </li>
+          <li class="current-menu-item menu-item-has-children"><a [routerLink]="['/students']" routerLinkActive="router-link-active" >Estudiantes</a>
+        
+          </li>
+       
+          <li><a [routerLink]="['/register']" routerLinkActive="router-link-active" >Unete</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="navigation--list">
+      <div class="navigation__content"><a class="navigation__item active" href="index-2.html"><i class="fa fa-home"></i></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i class="fa fa-search"></i></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"></a></div>
+    </div>
+    <!--include search-sidebar-->

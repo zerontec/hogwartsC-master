@@ -1,0 +1,98 @@
+<div class="navigation--list">
+  <div class="navigation__content"><a class="navigation__item active" href="index-2.html"><i
+        class="fa fa-home"></i></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i
+        class="fa fa-bars"></i></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i
+        class="fa fa-search"></i></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"><i
+        class="fa fa-shopping-basket"></i></a></div>
+</div>
+<!--include search-sidebar-->
+<div class="ps-page--contact">
+  <div class="ps-hero bg--cover" data-background="./assets/img/hogwartsS.jpg">
+    <div class="ps-hero__container">
+      <div class="ps-breadcrumb">
+        <ul class="breadcrumb">
+          <li><a href="index-2.html">Home</a></li>
+          <li>Unete</li>
+        </ul>
+      </div>
+      <h1 class="ps-hero__heading" style="color: white;">Unete</h1>
+    </div>
+  </div>
+  <div class="ps-section ps-contact">
+
+    <div *ngIf="!preload" class="container">
+
+
+
+      <form (ngSubmit)="onSubmitted()" [formGroup]="registerForm" class="ps-form--contact">
+        <div class="ps-form__header">
+          <p>Envia Tu Solicitud </p>
+          <h3>Unete a la Mejor</h3>
+        </div>
+        <div class="ps-form__content">
+          <div class="row">
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 ">
+              <div class="form-group">
+                <input formControlName="name" class="form-control" [ngClass]="{ 'is-invalid':  form.name.errors }"
+                  class="form-control" type="text" placeholder="Your Name">
+                <div *ngIf="form.name.errors" class="invalid-feedback">
+                  <div *ngIf="form.name.errors.required">El nombre es obligatorio</div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 ">
+              <div class="form-group">
+                <input formControlName="patronus" class="form-control"
+                  [ngClass]="{ 'is-invalid':  form.patronus.errors }" class="form-control" type="text"
+                  placeholder="Tu Patronus">
+                <div *ngIf="form.patronus.errors" class="invalid-feedback">
+                  <div *ngIf="form.patronus.errors.required">Tu Patronus es Requerido</div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 ">
+              <div class="form-group">
+                <input formControlName="house" class="form-control" [ngClass]="{ 'is-invalid':  form.house.errors }"
+                  type="text" placeholder="A que casa te Gustaria Pertenecer">
+                <div *ngIf="form.house.errors" class="invalid-feedback">
+                  <div *ngIf="form.house.errors.required">Ingresa una Casa con Seguridad</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-4 col-md-4 col-sm-12 col-12 ">
+              <div class="form-group">
+                <input formControlName="dateOfBirth" class="form-control"
+                  [ngClass]="{ 'is-invalid':  form.dateOfBirth.errors }" type="date"
+                  placeholder="Ingresa Tu fecha de Nacimiento">
+                <div *ngIf="form.dateOfBirth.errors" class="invalid-feedback">
+                  <div *ngIf="form.dateOfBirth.errors.required">Es Requerida Por Favor </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="ps-form__submit">
+            <button class="ps-btn" [disabled]="registerForm.invalid">Enviar</button>
+            <button class="ps-btn" style=" background-color: red;" type="reset" (click)="onReset()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="preload" class="d-flex justify-content-center">
+
+  <div class="spinner-border text-muted my-5">
+    <h3>Cargando</h3>
+  </div>
+
+</div>

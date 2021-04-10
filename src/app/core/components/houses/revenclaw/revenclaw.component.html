@@ -1,0 +1,53 @@
+   <div class="ps-page">
+     <div class="ps-hero bg--cover" style="background-color: sienna;">
+       <div class="ps-hero__container">
+         <div class="ps-breadcrumb">
+           <ul class="breadcrumb">
+             <li><a href="index-2.html">Home</a></li>
+             <li>Casa</li>
+           </ul>
+         </div>
+         <h1 class="ps-hero__heading" style="color: white;">Ravenclaw</h1>
+       </div>
+     </div>
+     <div *ngIf="!preload" class="container">
+       <div class="ps-whishlist">
+         <div class="table-responsive">
+           <table class="table ps-table ps-table--whishlist">
+             <thead>
+               <tr>
+                 <th>Nombre</th>
+                 <th>Patronus</th>
+                 <th>Fecha de Cumpleaños</th>
+                 <th></th>
+               </tr>
+             </thead>
+             <tbody *ngFor="let house of houseList">
+               <tr>
+                 <td>
+                   <div class="ps-product--cart">
+                     <div class="ps-product__thumbnail"><img [src]="house.image" alt=""><a class="ps-product__overlay"
+                         href="product-detail.html"></a></div>
+                     <span class="ps-instock">{{house.name}}</span>
+                   </div>
+                 </td>
+                 <td>{{house.patronus}}</td>
+                 <td><span class="ps-instock">{{house.dateOfBirth | date:"mediumDate"}}</span></td>
+                 <td class="ps-table__actions"><a class="ps-btn" href="#"> Me Gusta</a></td>
+               </tr>
+
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+   <div *ngIf="preload" class="d-flex justify-content-center">
+
+     <div class="spinner-border text-muted my-5">
+       <h3>Cargando</h3>
+     </div>
+
+   </div>

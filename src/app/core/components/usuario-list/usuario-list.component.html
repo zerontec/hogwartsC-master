@@ -1,0 +1,43 @@
+   <div class="ps-page">
+     <div class="ps-hero bg--cover" data-background="./assets/img/hogwartsS.jpg">
+       <div class="ps-hero__container">
+         <div class="ps-breadcrumb">
+           <ul class="breadcrumb">
+             <li><a href="index-2.html">Home</a></li>
+             <li>Nuevos Ingresos</li>
+           </ul>
+         </div>
+         <h1 class="ps-hero__heading" style="color: white;">Nuevos Ingresos</h1>
+       </div>
+     </div>
+     <div class="container">
+       <div class="ps-whishlist">
+         <div class="table-responsive">
+           <table class="table ps-table ps-table--whishlist">
+             <thead>
+               <tr>
+                 <th>Nombre</th>
+                 <th>Patronus</th>
+                 <th>Fecha de Cumpleaños</th>
+                 <th></th>
+               </tr>
+             </thead>
+             <tbody *ngFor="let newStudent of newStudents">
+               <tr>
+                 <td>
+                   <div class="ps-product--cart">
+                     <div class="ps-product__thumbnail"><img alt=""><a class="ps-product__overlay"></a></div>
+                     <span class="ps-instock">{{newStudent.name}}</span>
+                   </div>
+                 </td>
+                 <td>{{newStudent.patronus}}</td>
+                 <td><span class="ps-instock">{{newStudent.dateOfBirth | date:"mediumDate"}}</span></td>
+                 <td class="ps-table__actions"><a class="ps-btn" href="#"> Me Gusta</a></td>
+               </tr>
+
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+   </div>
