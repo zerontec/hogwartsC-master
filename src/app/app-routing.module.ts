@@ -1,30 +1,79 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UsuarioListComponent } from './core/components/usuario-list/usuario-list.component';
-import { RegisterComponent } from './core/components/register/register.component';
-import { TeachersComponent } from './core/components/teachers/teachers.component';
-import { StudentsComponent } from './core/components/students/students.component';
-import { SlytherinComponent } from './core/components/houses/slytherin/slytherin.component';
-import { HufflepuffComponent } from './core/components/houses/hufflepuff/hufflepuff.component';
-import { GryffindorComponent } from './core/components/houses/gryffindor/gryffindor.component';
-import { HomeComponent } from './core/components/home/home.component';
-
-import { RevenclawComponent } from './core/components/houses/revenclaw/revenclaw.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'gryffindor', component: GryffindorComponent },
-  { path: 'slytherin', component: SlytherinComponent },
-  { path: 'hufflepuff', component: HufflepuffComponent },
-  { path: 'ravenclaw', component: RevenclawComponent },
-  { path: 'students', component: StudentsComponent },
-  { path: 'teachers', component: TeachersComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'new-students', component: UsuarioListComponent },
-];
+  {
+    path: `home`,
+    loadChildren: () =>
+      import('./core/components/home/home.module').then((m) => m.HomeModule),
+  },
 
+  {
+    path: `gryffindor`,
+    loadChildren: () =>
+      import('./core/components/houses/gryffindor/gryffindor.module').then(
+        (m) => m.GryffindorModule
+      ),
+  },
+  {
+    path: `hufflepuff`,
+    loadChildren: () =>
+      import('./core/components/houses/hufflepuff/hufflepuff.module').then(
+        (m) => m.HufflepuffModule
+      ),
+  },
+
+  {
+    path: `ravenclaw`,
+    loadChildren: () =>
+      import('./core/components/houses/revenclaw/revenclaw.module').then(
+        (m) => m.RevenclawModule
+      ),
+  },
+
+  {
+    path: `slytherin`,
+    loadChildren: () =>
+      import('./core/components/houses/slytherin/slytherin.module').then(
+        (m) => m.SlytherinModule
+      ),
+  },
+
+  {
+    path: `register`,
+    loadChildren: () =>
+      import('./core/components/register/register.module').then(
+        (m) => m.RegisterModule
+      ),
+  },
+
+  {
+    path: `students`,
+    loadChildren: () =>
+      import('./core/components/students/students.module').then(
+        (m) => m.StudentsModule
+      ),
+  },
+
+  {
+    path: `teachers`,
+    loadChildren: () =>
+      import('./core/components/teachers/teachers.module').then(
+        (m) => m.TeachersModule
+      ),
+  },
+
+  {
+    path: `usuario-list`,
+    loadChildren: () =>
+      import('./core/components/usuario-list/usuario-list.module').then(
+        (m) => m.UsuarioListModule
+      ),
+  },
+  { path: ``, redirectTo: `home`, pathMatch: `full` },
+];
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
